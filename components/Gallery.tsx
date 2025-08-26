@@ -182,7 +182,7 @@ const Gallery = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
         >
           <AnimatePresence>
             {filteredItems.map((item, index) => (
@@ -194,7 +194,7 @@ const Gallery = () => {
                 className="group cursor-pointer"
                 onClick={() => openLightbox(index)}
               >
-                <div className="relative overflow-hidden rounded-2xl bg-gray-100 aspect-square">
+                <div className="relative overflow-hidden rounded-2xl bg-gray-100 aspect-[4/3] h-48 sm:h-56 lg:h-64">
                   <Image
                     src={item.src}
                     alt={item.alt}
