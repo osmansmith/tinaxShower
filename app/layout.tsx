@@ -4,7 +4,11 @@ import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
+// Configuración de URL base según el entorno
+const baseUrl = process.env.NEXT_PUBLIC_METADATA_BASE || process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
   title: {
     default: 'TinaXShower - Servicios de Ducha Premium en Chile',
     template: '%s | TinaXShower'
@@ -39,13 +43,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'es_CL',
-    url: 'https://tinaxshower.com',
+    url: '/',
     title: 'TinaXShower - Servicios de Ducha Premium en Chile',
     description: 'Servicios profesionales de instalación y reparación de duchas en Chile. Especialistas en duchas modernas, reparaciones rápidas y mantenimiento.',
     siteName: 'TinaXShower',
     images: [
       {
-        url: 'https://tinaxshower.com/images/logo_txs.svg',
+        url: '/img/logo_txs.png',
         width: 1200,
         height: 630,
         alt: 'TinaXShower - Servicios de Ducha Premium',
@@ -56,7 +60,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'TinaXShower - Servicios de Ducha Premium en Chile',
     description: 'Servicios profesionales de instalación y reparación de duchas en Chile.',
-    images: ['https://tinaxshower.com/images/logo_txs.svg'],
+    images: ['/img/logo_txs.png'],
   },
   verification: {
     google: 'your-google-site-verification-code',
@@ -83,9 +87,9 @@ export default function RootLayout({
     "@type": "LocalBusiness",
     "name": "TinaXShower",
     "description": "Servicios profesionales de instalación y reparación de duchas en Chile",
-    "url": "https://tinaxshower.com",
-    "logo": "https://tinaxshower.com/images/logo_txs.png",
-    "image": "https://tinaxshower.com/images/logo_txs.png",
+    "url": baseUrl,
+    "logo": `${baseUrl}/img/logo_txs.png`,
+    "image": `${baseUrl}/img/logo_txs.png`,
     "telephone": "+56947175436",
     "address": {
       "@type": "PostalAddress",
