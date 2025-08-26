@@ -1,0 +1,42 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="heroGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F172A;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1E293B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#334155;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#heroGradient2)"/>
+  
+  <!-- Professional Tools Illustration -->
+  <g transform="translate(1000, 300)">
+    <!-- Toolbox -->
+    <rect x="0" y="200" width="300" height="150" fill="#374151" rx="10"/>
+    <rect x="10" y="210" width="280" height="130" fill="#4B5563" rx="5"/>
+    
+    <!-- Tools -->
+    <g stroke="#E5E7EB" stroke-width="3" fill="none">
+      <!-- Wrench -->
+      <path d="M50 100 L150 100 M140 90 L160 90 M140 110 L160 110" stroke="#60A5FA"/>
+      <!-- Screwdriver -->
+      <line x1="200" y1="80" x2="200" y2="180" stroke="#F59E0B"/>
+      <circle cx="200" cy="80" r="5" fill="#F59E0B"/>
+      <!-- Pipe -->
+      <rect x="250" y="120" width="80" height="20" fill="#6B7280" rx="10"/>
+    </g>
+    
+    <!-- Certification Badge -->
+    <circle cx="400" cy="100" r="60" fill="#059669" opacity="0.9"/>
+    <text x="400" y="110" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">CERT</text>
+  </g>
+  
+  <!-- Decorative Grid -->
+  <defs>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#334155" stroke-width="1" opacity="0.3"/>
+    </pattern>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#grid)"/>
+</svg>

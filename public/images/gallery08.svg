@@ -1,0 +1,67 @@
+<svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="completeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EFF6FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DBEAFE;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="800" fill="url(#completeGrad)"/>
+  
+  <!-- Complete Shower System -->
+  <rect x="150" y="100" width="500" height="600" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="3" rx="15"/>
+  
+  <!-- Rain Shower Head -->
+  <circle cx="400" cy="180" r="50" fill="#374151"/>
+  <circle cx="400" cy="180" r="40" fill="#4B5563"/>
+  
+  <!-- Hand Shower -->
+  <ellipse cx="300" cy="250" rx="15" ry="30" fill="#6B7280"/>
+  <path d="M285 250 Q270 240 260 250" stroke="#9CA3AF" stroke-width="8" fill="none"/>
+  
+  <!-- Thermostatic Mixer -->
+  <rect x="500" y="300" width="80" height="120" fill="#1F2937" rx="10"/>
+  <circle cx="540" cy="330" r="15" fill="#EF4444"/>
+  <circle cx="540" cy="370" r="15" fill="#3B82F6"/>
+  <rect x="510" y="390" width="60" height="20" fill="#4B5563" rx="5"/>
+  
+  <!-- Body Jets -->
+  <g fill="#6B7280">
+    <circle cx="200" cy="350" r="8"/>
+    <circle cx="200" cy="400" r="8"/>
+    <circle cx="200" cy="450" r="8"/>
+    <circle cx="600" cy="350" r="8"/>
+    <circle cx="600" cy="400" r="8"/>
+    <circle cx="600" cy="450" r="8"/>
+  </g>
+  
+  <!-- Water Effects -->
+  <g fill="#60A5FA" opacity="0.7">
+    <!-- Rain water -->
+    <ellipse cx="380" cy="250" rx="3" ry="20"/>
+    <ellipse cx="400" cy="240" rx="4" ry="25"/>
+    <ellipse cx="420" cy="250" rx="3" ry="20"/>
+    
+    <!-- Hand shower -->
+    <ellipse cx="280" cy="280" rx="8" ry="3"/>
+    
+    <!-- Body jets -->
+    <ellipse cx="220" cy="350" rx="12" ry="3"/>
+    <ellipse cx="220" cy="400" rx="12" ry="3"/>
+    <ellipse cx="580" cy="350" rx="12" ry="3"/>
+    <ellipse cx="580" cy="400" rx="12" ry="3"/>
+  </g>
+  
+  <!-- Accessories -->
+  <rect x="180" y="500" width="40" height="80" fill="#9CA3AF" rx="5"/>
+  <rect x="580" y="500" width="40" height="80" fill="#9CA3AF" rx="5"/>
+  
+  <!-- Floor Drain -->
+  <rect x="350" y="650" width="100" height="20" fill="#6B7280" rx="10"/>
+  
+  <!-- Complete System Badge -->
+  <circle cx="700" cy="150" r="35" fill="#059669"/>
+  <text x="700" y="160" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">COMPLETO</text>
+  
+  <text x="400" y="750" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#1F2937">Sistema Completo</text>
+</svg>
