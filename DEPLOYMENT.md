@@ -27,18 +27,30 @@
 - ✅ Mejorado manejo de errores en server.js
 - ✅ Creado páginas de error personalizadas (404.tsx, 500.tsx)
 
-### 2. Pasos para Deployment
+### 2. Pasos para Deployment (SOLUCIÓN ERROR 503)
 
-#### Opción 1: Deployment Manual
+#### Opción 1: Servidor Optimizado (RECOMENDADO para resolver 503)
+```bash
+# 1. Instalar dependencias
+npm install
+
+# 2. Build para producción
+npm run build:prod
+
+# 3. Iniciar servidor optimizado
+npm run start:prod
+```
+
+#### Opción 2: Servidor Estándar
 ```bash
 # 1. Build para producción
 npm run build:prod
 
-# 2. Iniciar servidor
-npm run start:prod
+# 2. Iniciar servidor estándar
+npm run server:prod
 ```
 
-#### Opción 2: Con PM2 (Recomendado)
+#### Opción 3: Con PM2 (Para servidores VPS)
 ```bash
 # 1. Instalar PM2 globalmente
 npm install -g pm2
@@ -46,12 +58,17 @@ npm install -g pm2
 # 2. Build para producción
 npm run build:prod
 
-# 3. Iniciar con PM2
-pm2 start ecosystem.config.js --env production
+# 3. Iniciar con PM2 usando servidor optimizado
+pm2 start production-server.js --name "tinaxshower-prod" --env production
 
 # 4. Guardar configuración PM2
 pm2 save
 pm2 startup
+```
+
+#### Opción 4: Deployment Completo (Un solo comando)
+```bash
+npm run deploy
 ```
 
 ### 3. Variables de Entorno Requeridas
@@ -148,7 +165,34 @@ pm2 status
 pm2 restart tinaxshower
 ```
 
-### 7. Troubleshooting
+### 7. Solución Específica Error 503 (Service Unavailable)
+
+**El error 503 en producción se debe a:**
+1. **Configuración inadecuada del servidor Next.js**
+2. **Manejo deficiente de archivos estáticos**
+3. **Timeouts del servidor web**
+4. **Falta de optimizaciones para producción**
+
+**SOLUCIÓN IMPLEMENTADA:**
+- ✅ **Servidor optimizado**: `production-server.js` con manejo mejorado de requests
+- ✅ **Configuración específica**: Headers de seguridad y cache optimizado
+- ✅ **Manejo de archivos estáticos**: Servido directo de imágenes y favicon
+- ✅ **Timeouts configurados**: Evita cuelgues del servidor
+- ✅ **Cierre graceful**: Manejo correcto de señales del sistema
+
+**Para resolver el 503, usar:**
+```bash
+npm run start:prod  # Usa production-server.js optimizado
+```
+
+### 8. Troubleshooting
+
+**Si persisten los errores 503:**
+1. Verificar que el puerto 3000 esté disponible
+2. Revisar logs del servidor: `pm2 logs tinaxshower-prod`
+3. Verificar variables de entorno en `.env.production`
+4. Comprobar que el build se completó: `ls -la .next/`
+5. Verificar memoria disponible del servidor
 
 **Si persisten los errores 500:**
 1. Verificar que todas las dependencias estén instaladas
@@ -161,4 +205,19 @@ pm2 restart tinaxshower
 2. Verificar configuración de `remotePatterns` en `next.config.js`
 3. Verificar headers CORS
 
-Esta configuración debería resolver los problemas de deployment en producción.
+**Comandos de diagnóstico:**
+```bash
+# Verificar estado del servidor
+curl -I https://prueba.tinaxshower.cl
+
+# Verificar logs en tiempo real
+pm2 logs tinaxshower-prod --lines 50
+
+# Verificar uso de memoria
+pm2 monit
+
+# Reiniciar si es necesario
+pm2 restart tinaxshower-prod
+```
+
+Esta configuración resuelve específicamente el error 503 en producción.
