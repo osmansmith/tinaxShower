@@ -7,26 +7,49 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'tinaxshower.com',
+        hostname: 'prueba.tinaxshower.cl',
         port: '',
         pathname: '/images/**',
       },
       {
         protocol: 'https',
-        hostname: 'tinaxshower.com',
+        hostname: 'prueba.tinaxshower.cl',
         port: '',
         pathname: '/img/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'tinaxshower.cl',
+        port: '',
+        pathname: '/**',
       },
     ],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    unoptimized: process.env.NODE_ENV === 'production',
   },
   poweredByHeader: false,
   compress: true,
+  trailingSlash: false,
+  generateEtags: false,
+  async headers() {
+    return [
+      {
+        source: '/favicon.ico',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400',
+          },
+        ],
+      },
+    ]
+  },
 }
 
 // Configuración adicional para producción
 if (process.env.NODE_ENV === 'production') {
+  nextConfig.output = 'standalone'
   nextConfig.swcMinify = true
   nextConfig.compiler = {
     removeConsole: {
