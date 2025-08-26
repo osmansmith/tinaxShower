@@ -1,8 +1,8 @@
-const { createServer } = require('http')
-const { parse } = require('url')
-const next = require('next')
-const path = require('path')
-const fs = require('fs')
+const { createServer } = require("http")
+const next = require("next")
+const { parse } = require("url")
+const path = require("path")
+const fs = require("fs")
 
 // Configuración del servidor
 const port = parseInt(process.env.PORT || '3000', 10)

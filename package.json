@@ -13,7 +13,9 @@
     "lint:fix": "next lint --fix",
     "type-check": "tsc --noEmit",
     "export": "next export",
-    "deploy": "npm run build:prod && npm run start:prod"
+    "deploy": "npm run build:prod && npm run start:prod",
+    "build:static": "next build",
+    "export:cpanel": "npm run build:static && echo 'Build completado para cPanel. Sube la carpeta out/ a public_html/'"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",

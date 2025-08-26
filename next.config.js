@@ -1,40 +1,35 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Configuración para cPanel - exportación estática
+  output: 'export',
+  trailingSlash: true,
+  skipTrailingSlashRedirect: true,
+  
+  // Configuración de imágenes para hosting estático
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'prueba.tinaxshower.cl',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'tinaxshower.cl',
-        port: '',
-        pathname: '/**',
-      },
-    ],
-    unoptimized: process.env.NODE_ENV === 'production',
-    domains: ['prueba.tinaxshower.cl', 'tinaxshower.cl'],
+    unoptimized: true,
+    loader: 'custom',
+    loaderFile: './image-loader.js'
   },
-  poweredByHeader: false,
+  
+  // Configuraciones de optimización
   compress: true,
   generateEtags: false,
-}
-
-// Configuración específica para producción
-if (process.env.NODE_ENV === 'production') {
-  nextConfig.output = 'standalone'
-  nextConfig.trailingSlash = false
-  nextConfig.swcMinify = true
-  nextConfig.experimental = {
-    optimizeCss: true,
-  }
-  nextConfig.compiler = {
-    removeConsole: {
-      exclude: ['error', 'warn'],
-    },
+  swcMinify: true,
+  poweredByHeader: false,
+  reactStrictMode: true,
+  
+  // Configuración de rutas para cPanel
+  basePath: '',
+  assetPrefix: '',
+  
+  env: {
+    CUSTOM_KEY: process.env.CUSTOM_KEY,
+  },
+  
+  // Headers de seguridad (se manejarán via .htaccess)
+  async headers() {
+    return []
   }
 }
 
