@@ -1,0 +1,42 @@
+<svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="800" fill="#EFF6FF"/>
+  
+  <!-- Wall Cross-section -->
+  <rect x="100" y="200" width="600" height="400" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="2"/>
+  
+  <!-- Waterproofing Layers -->
+  <rect x="120" y="220" width="560" height="20" fill="#3B82F6" opacity="0.8"/>
+  <text x="130" y="235" font-family="Arial" font-size="12" fill="#FFFFFF">Membrana Impermeabilizante</text>
+  
+  <rect x="120" y="250" width="560" height="30" fill="#6B7280"/>
+  <text x="130" y="270" font-family="Arial" font-size="12" fill="#FFFFFF">Adhesivo Especializado</text>
+  
+  <rect x="120" y="290" width="560" height="40" fill="#F59E0B" opacity="0.7"/>
+  <text x="130" y="315" font-family="Arial" font-size="12" fill="#1F2937">Sellado de Juntas</text>
+  
+  <!-- Tiles -->
+  <g fill="#FFFFFF" stroke="#E5E7EB">
+    <rect x="120" y="340" width="80" height="80"/>
+    <rect x="200" y="340" width="80" height="80"/>
+    <rect x="280" y="340" width="80" height="80"/>
+    <rect x="360" y="340" width="80" height="80"/>
+    <rect x="440" y="340" width="80" height="80"/>
+    <rect x="520" y="340" width="80" height="80"/>
+    <rect x="600" y="340" width="80" height="80"/>
+  </g>
+  
+  <!-- Water Droplets (showing protection) -->
+  <g fill="#60A5FA" opacity="0.5">
+    <circle cx="200" cy="150" r="5"/>
+    <circle cx="300" cy="140" r="4"/>
+    <circle cx="400" cy="160" r="6"/>
+    <circle cx="500" cy="145" r="4"/>
+    <circle cx="600" cy="155" r="5"/>
+  </g>
+  
+  <!-- Protection Shield -->
+  <path d="M 350 100 L 450 100 L 470 120 L 450 140 L 350 140 L 330 120 Z" fill="#10B981" opacity="0.8"/>
+  <text x="400" y="125" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#FFFFFF">✓</text>
+  
+  <text x="400" y="750" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#1F2937">Impermeabilización Total</text>
+</svg>

@@ -43,11 +43,11 @@
                     'fallback_cb'    => false,
                 ));
                 ?>
-                <div class="ml-8 flex space-x-4">
+                <!-- <div class="ml-8 flex space-x-4">
                     <a href="<?php echo esc_url(home_url('/contacto')); ?>" class="btn-primary">
                         Contactar
                     </a>
-                </div>
+                </div> -->
             </nav>
 
             <button id="mobile-menu-toggle" class="lg:hidden flex items-center">

@@ -25,7 +25,7 @@ if (!$services_query->have_posts()) {
             'features' => ['Instalación rápida', 'Materiales de calidad', 'Garantía de 2 años', 'Servicio post-instalación'],
             'price' => '299',
             'duration' => '1-2 días',
-            'image' => get_template_directory_uri() . '/assets/images/service-1.jpg',
+            'image' => get_template_directory_uri() . '/assets/images/service-1.png',
         ],
         [
             'icon' => 'tool',
@@ -34,7 +34,7 @@ if (!$services_query->have_posts()) {
             'features' => ['Diagnóstico gratuito', 'Reparación rápida', 'Piezas originales', 'Garantía de servicio'],
             'price' => '149',
             'duration' => '2-4 horas',
-            'image' => get_template_directory_uri() . '/assets/images/service-2.jpg',
+            'image' => get_template_directory_uri() . '/assets/images/service-2.png',
         ],
         [
             'icon' => 'refresh-cw',
@@ -43,7 +43,7 @@ if (!$services_query->have_posts()) {
             'features' => ['Diseño personalizado', 'Materiales premium', 'Instalación profesional', 'Garantía extendida'],
             'price' => '999',
             'duration' => '5-7 días',
-            'image' => get_template_directory_uri() . '/assets/images/service-3.jpg',
+            'image' => get_template_directory_uri() . '/assets/images/service-3.png',
         ],
     ];
 }

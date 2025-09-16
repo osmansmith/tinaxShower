@@ -26,35 +26,21 @@ $gallery_query = new WP_Query($gallery_args);
 if (!$gallery_query->have_posts()) {
     $default_gallery = [
         [
-            'image' => get_template_directory_uri() . '/assets/images/gallery-1.jpg',
+            'image' => get_template_directory_uri() . '/assets/images/service-1.png',
             'title' => 'Ducha Moderna',
             'category' => 'instalacion',
         ],
         [
-            'image' => get_template_directory_uri() . '/assets/images/gallery-2.jpg',
+            'image' => get_template_directory_uri() . '/assets/images/service-2.png',
             'title' => 'Baño Completo',
             'category' => 'renovacion',
         ],
         [
-            'image' => get_template_directory_uri() . '/assets/images/gallery-3.jpg',
+            'image' => get_template_directory_uri() . '/assets/images/service-3.png',
             'title' => 'Ducha de Cristal',
             'category' => 'instalacion',
         ],
-        [
-            'image' => get_template_directory_uri() . '/assets/images/gallery-4.jpg',
-            'title' => 'Reparación de Grifo',
-            'category' => 'reparacion',
-        ],
-        [
-            'image' => get_template_directory_uri() . '/assets/images/gallery-5.jpg',
-            'title' => 'Baño Minimalista',
-            'category' => 'renovacion',
-        ],
-        [
-            'image' => get_template_directory_uri() . '/assets/images/gallery-6.jpg',
-            'title' => 'Ducha con Mampara',
-            'category' => 'instalacion',
-        ],
+       
     ];
     
     $categories = ['todos', 'instalacion', 'reparacion', 'renovacion'];

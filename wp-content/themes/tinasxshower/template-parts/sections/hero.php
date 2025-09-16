@@ -12,17 +12,17 @@ $hero_slides = get_theme_mod('hero_slides', []);
 if (empty($hero_slides)) {
     $hero_slides = [
         [
-            'image' => get_template_directory_uri() . '/assets/images/hero-1.jpg',
+            'image' => get_template_directory_uri() . '/assets/images/top01.jpg',
             'title' => 'Transforma tu baño con nuestras duchas',
             'subtitle' => 'Soluciones elegantes y funcionales para tu hogar',
         ],
         [
-            'image' => get_template_directory_uri() . '/assets/images/hero-2.jpg',
+            'image' => get_template_directory_uri() . '/assets/images/top02.jpg',
             'title' => 'Calidad y diseño en cada instalación',
             'subtitle' => 'Materiales premium y acabados perfectos',
         ],
         [
-            'image' => get_template_directory_uri() . '/assets/images/hero-3.jpg',
+            'image' => get_template_directory_uri() . '/assets/images/top03.jpg',
             'title' => 'Servicio profesional garantizado',
             'subtitle' => 'Expertos en instalación y mantenimiento',
         ],
@@ -184,7 +184,7 @@ if (empty($hero_slides)) {
                 stopAutoplay();
                 startAutoplay();
             });
-        });
+        };
         
         // Iniciar el autoplay
         startAutoplay();

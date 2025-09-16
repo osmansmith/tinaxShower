@@ -1,0 +1,27 @@
+{
+  "name": "TinaXShower - Servicios de Ducha Premium",
+  "short_name": "TinaXShower",
+  "description": "Servicios profesionales de instalación y reparación de duchas en Chile",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0ea5e9",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/logo_txs.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/images/logo_txs.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["business", "utilities"],
+  "lang": "es",
+  "dir": "ltr"
+}

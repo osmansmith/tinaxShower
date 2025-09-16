@@ -66,21 +66,27 @@ add_action('after_setup_theme', 'tinasxshower_setup');
 /**
  * Enqueue scripts and styles.
  */
-function tinasxshower_scripts() {
+function tinasxshower_scripts_styles() {
     // Enqueue main stylesheet
     wp_enqueue_style('tinasxshower-style', get_stylesheet_uri(), array(), TINASXSHOWER_VERSION);
     
     // Enqueue custom styles
     wp_enqueue_style('tinasxshower-main', TINASXSHOWER_URI . '/assets/css/main.css', array(), TINASXSHOWER_VERSION);
     
-    // Enqueue Tailwind CSS
-    wp_enqueue_style('tinasxshower-tailwind', TINASXSHOWER_URI . '/assets/css/tailwind.css', array(), TINASXSHOWER_VERSION);
+    // Enqueue Tailwind
+    wp_enqueue_script('tinasxshower-tailwind', 'https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4', array(), '4.0.0');
     
     // Enqueue Google Fonts
     wp_enqueue_style('tinasxshower-fonts', 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap', array(), null);
     
+    // Enqueue Swiper CSS
+    wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css', array(), '8.4.7');
+    
+    // Enqueue Swiper JS
+    wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js', array('jquery'), '8.4.7', true);
+    
     // Enqueue main JavaScript file
-    wp_enqueue_script('tinasxshower-main', TINASXSHOWER_URI . '/assets/js/main.js', array('jquery'), TINASXSHOWER_VERSION, true);
+    wp_enqueue_script('tinasxshower-main', TINASXSHOWER_URI . '/assets/js/main.js', array('jquery', 'swiper-js'), TINASXSHOWER_VERSION, true);
 
     // Localize script for AJAX
     wp_localize_script('tinasxshower-main', 'tinasxshower_ajax', array(
@@ -93,7 +99,7 @@ function tinasxshower_scripts() {
         wp_enqueue_script('comment-reply');
     }
 }
-add_action('wp_enqueue_scripts', 'tinasxshower_scripts');
+add_action('wp_enqueue_scripts', 'tinasxshower_scripts_styles');
 
 /**
  * Register widget area.
